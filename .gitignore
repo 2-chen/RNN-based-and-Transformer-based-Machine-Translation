@@ -9,7 +9,9 @@ venv/
 ENV/
 .venv
 
-# 模型检查点（如果太大可以不上传）
+# 模型检查点（所有.pt文件都太大，无法直接上传到GitHub）
+# GitHub单个文件限制为100MB，而模型文件通常>100MB
+# 请使用Git LFS或GitHub Releases上传模型文件
 checkpoints/*.pt
 checkpoints/*.pth
 checkpoints/*.ckpt
