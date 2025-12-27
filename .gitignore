@@ -54,3 +54,6 @@ missfont.log
 
 # 项目检查清单（可选）
 项目检查清单.md
+
+# 用于Hugging Face上传的模型文件（不上传GitHub）
+checkpoints_for_hf_upload/
