@@ -5,9 +5,11 @@
 ## 当前状态
 
 ✅ 本地Git仓库已初始化
-✅ 所有文件已添加到暂存区
+✅ 所有文件已添加到暂存区（大文件已从Git中移除）
 ✅ 已创建初始提交
+✅ 已清理Git历史中的大文件（.git目录从11G降至16M）
 ✅ 已添加远程仓库：https://github.com/2-chen/RNN-based-and-Transformer-based-Machine-Translation.git
+✅ 已更新项目报告中的GitHub链接
 
 ## 推送步骤
 
