@@ -134,8 +134,5 @@ python inference.py \
 
 ## 作者
 
-根据作业要求填写
-
-## 许可证
-
-MIT License
+陈嘉诚
+250010008
