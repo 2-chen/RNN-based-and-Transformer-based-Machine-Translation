@@ -323,7 +323,7 @@ def main():
             for k, v in config.items():
                 # 如果命令行中没有提供该参数，才使用配置文件的值
                 if not is_arg_provided(k):
-                setattr(args, k, v)
+                    setattr(args, k, v)
     
     device = torch.device(args.device)
     

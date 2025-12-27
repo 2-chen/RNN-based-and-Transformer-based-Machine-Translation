@@ -12,11 +12,14 @@ ENV/
 # 模型检查点（所有.pt文件都太大，无法直接上传到GitHub）
 # GitHub单个文件限制为100MB，而模型文件通常>100MB
 # 请使用Git LFS或GitHub Releases上传模型文件
-checkpoints/*.pt
-checkpoints/*.pth
-checkpoints/*.ckpt
-# 但保留结果JSON文件
-!checkpoints/*.json
+checkpoints/**/*.pt
+checkpoints/**/*.pth
+checkpoints/**/*.ckpt
+# 但允许demo模型文件（<100MB，用于快速测试）
+!checkpoints/demo_rnn/rnn_best.pt
+!checkpoints/demo_transformer/transformer_best.pt
+# 保留结果JSON文件
+!checkpoints/**/*.json
 
 # 预训练模型（通常太大，不上传）
 models/

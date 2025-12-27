@@ -89,14 +89,49 @@ else
     echo ""
 fi
 
+# 测试Demo模型（如果存在）
+echo "6. 测试Demo RNN模型..."
+if check_model "rnn" "checkpoints/demo_rnn/rnn_best.pt"; then
+    python inference.py \
+        --model_type rnn \
+        --checkpoint checkpoints/demo_rnn/rnn_best.pt \
+        --input "你好世界" \
+        --device cpu
+    echo ""
+else
+    echo "   跳过（模型文件不存在，运行 'python train_demo.py --model_type rnn' 生成）"
+    echo ""
+fi
+
+echo "7. 测试Demo Transformer模型..."
+if check_model "transformer" "checkpoints/demo_transformer/transformer_best.pt"; then
+    python inference.py \
+        --model_type transformer \
+        --checkpoint checkpoints/demo_transformer/transformer_best.pt \
+        --input "你好世界" \
+        --device cpu
+    echo ""
+else
+    echo "   跳过（模型文件不存在，运行 'python train_demo.py --model_type transformer' 生成）"
+    echo ""
+fi
+
 echo "=========================================="
 echo "测试完成！"
 echo "=========================================="
 echo ""
 echo "注意：如果某些模型文件不存在，请先训练模型或下载模型文件"
-echo "模型文件路径："
+echo ""
+echo "快速生成Demo模型（用于测试，文件<100MB）："
+echo "  python train_demo.py --model_type rnn          # 训练RNN demo模型"
+echo "  python train_demo.py --model_type transformer  # 训练Transformer demo模型"
+echo "  python train_demo.py --model_type all          # 训练所有demo模型"
+echo ""
+echo "完整模型文件路径："
 echo "  - RNN: checkpoints/rnn_jieba_nltk/rnn_best.pt 或 checkpoints/rnn_hanlp_bpe/rnn_best.pt"
 echo "  - Transformer: checkpoints/transformer_jieba_nltk/transformer_best.pt 或 checkpoints/transformer_hanlp_bpe/transformer_best.pt"
 echo "  - T5: checkpoints/t5_best/"
+echo "  - Demo RNN: checkpoints/demo_rnn/rnn_best.pt"
+echo "  - Demo Transformer: checkpoints/demo_transformer/transformer_best.pt"
 echo ""
 

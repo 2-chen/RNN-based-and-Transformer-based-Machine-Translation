@@ -40,6 +40,30 @@ python -c "import nltk; nltk.download('punkt_tab'); nltk.download('punkt')"
 
 注意：新版本的 NLTK 需要 `punkt_tab`，旧版本需要 `punkt`。代码会自动处理，但建议同时下载以确保兼容性。
 
+## 快速开始（Demo模型）
+
+**想要快速测试？** 使用Demo模型训练脚本，5-10分钟即可生成小模型（<100MB）：
+
+```bash
+# 训练RNN Demo模型（约30-50MB，2个epoch）
+python train_demo.py --model_type rnn
+
+# 训练Transformer Demo模型（约50-80MB，2个epoch）
+python train_demo.py --model_type transformer
+
+# 训练所有Demo模型
+python train_demo.py --model_type all
+
+# 测试Demo模型
+./test_inference.sh
+```
+
+**Demo模型特点**：
+- ✅ 快速训练（2个epoch，约5-10分钟）
+- ✅ 文件小（<100MB，可上传GitHub）
+- ✅ 适合测试和演示
+- ⚠️ 性能不如完整训练的模型
+
 ## 使用方法
 
 ### 1. 数据预处理
@@ -52,34 +76,36 @@ python -c "import nltk; nltk.download('punkt_tab'); nltk.download('punkt')"
 - 词汇表构建
 - 词向量初始化（可选预训练词向量）
 
-### 2. 训练RNN模型
+### 2. 训练完整模型
+
+#### 2.1 训练RNN模型
 
 ```bash
 python src/train_rnn.py --config configs/rnn_config.yaml
 ```
 
-### 3. 训练Transformer模型
+#### 2.2 训练Transformer模型
 
 ```bash
 python src/train_transformer.py --config configs/transformer_config.yaml
 ```
 
-### 4. 微调T5模型
+#### 2.3 微调T5模型
 
 ```bash
 python src/train_t5.py --config configs/t5_config.yaml
 ```
 
-### 5. 推理
+### 3. 推理
 
-#### 5.1 一键测试所有模型
+#### 3.1 一键测试所有模型
 
 ```bash
 # 运行测试脚本（会自动测试所有可用的模型）
 ./test_inference.sh
 ```
 
-#### 5.2 单独测试特定模型
+#### 3.2 单独测试特定模型
 
 ```bash
 # RNN模型 (jieba+NLTK)
@@ -111,6 +137,18 @@ python inference.py \
     --model_type t5 \
     --checkpoint checkpoints/t5_best \
     --input "深度学习在自然语言处理领域取得了重大突破"
+
+# Demo RNN模型（快速测试）
+python inference.py \
+    --model_type rnn \
+    --checkpoint checkpoints/demo_rnn/rnn_best.pt \
+    --input "你好世界"
+
+# Demo Transformer模型（快速测试）
+python inference.py \
+    --model_type transformer \
+    --checkpoint checkpoints/demo_transformer/transformer_best.pt \
+    --input "你好世界"
 ```
 
 ## 模型特性
