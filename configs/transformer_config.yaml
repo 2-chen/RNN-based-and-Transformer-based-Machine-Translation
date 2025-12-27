@@ -1,0 +1,36 @@
+# Transformer模型配置
+
+# 数据路径
+train_file: data/train_100k.jsonl
+valid_file: data/valid.jsonl
+test_file: data/test.jsonl
+
+# 训练参数
+batch_size: 128  # 增大batch size以充分利用H100
+epochs: 200  # 增加训练轮数
+lr: 0.0003  # 提高学习率（从0.0001提高到0.0003）
+warmup_steps: 4000  # Warmup步数，约2-3个epoch
+max_length: 50
+clip_grad: 1.0  # 梯度裁剪
+
+# 模型参数
+d_model: 1024
+n_heads: 8
+n_layers: 6
+d_ff: 2048
+pos_encoding: absolute  # absolute or relative
+norm_type: layernorm  # layernorm or rmsnorm
+
+# 学习率调度器参数
+scheduler_patience: 5  # 增加patience，避免过早降低学习率
+scheduler_factor: 0.7  # 降低factor，更温和的学习率衰减
+min_lr: 0.000001  # 最小学习率（1e-6）
+
+# 分词参数
+min_freq: 2
+bpe_vocab_size: 30000
+bpe_model_path: checkpoints/bpe_tokenizer.json
+
+# 其他
+save_dir: checkpoints/transformer_hanlp_bpe
+device: cuda

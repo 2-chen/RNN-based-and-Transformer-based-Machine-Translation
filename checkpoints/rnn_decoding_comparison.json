@@ -1,0 +1,27 @@
+{
+  "greedy": {
+    "valid_bleu": 21.111207301134634,
+    "test_bleu": 8.728702414152284
+  },
+  "beam_search": {
+    "valid_bleu": 11.53751561496876,
+    "test_bleu": 26.269098944241577,
+    "beam_size": 5
+  },
+  "comparison": {
+    "valid_bleu_improvement": -9.573691686165875,
+    "test_bleu_improvement": 17.540396530089293,
+    "valid_bleu_improvement_percent": -45.34885925567758,
+    "test_bleu_improvement_percent": 200.95079082602433
+  },
+  "args": {
+    "model_path": "checkpoints/rnn_teacher_forcing/rnn_best.pt",
+    "valid_file": "data/valid.jsonl",
+    "test_file": "data/test.jsonl",
+    "batch_size": 64,
+    "beam_size": 5,
+    "max_length": 50,
+    "device": "cuda",
+    "output_file": "checkpoints/rnn_decoding_comparison.json"
+  }
+}

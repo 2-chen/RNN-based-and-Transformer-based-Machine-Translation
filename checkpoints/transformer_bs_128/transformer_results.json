@@ -1,0 +1,30 @@
+{
+  "best_valid_bleu": 29.92694690475121,
+  "test_bleu": 10.23857820560022,
+  "args": {
+    "config": "experiment_results/transformer_bs_128_config.yaml",
+    "train_file": "data/train_100k.jsonl",
+    "valid_file": "data/valid.jsonl",
+    "test_file": "data/test.jsonl",
+    "batch_size": 128,
+    "epochs": 5,
+    "lr": 0.0003,
+    "d_model": 1024,
+    "n_heads": 8,
+    "n_layers": 6,
+    "d_ff": 2048,
+    "pos_encoding": "absolute",
+    "norm_type": "layernorm",
+    "max_length": 50,
+    "min_freq": 2,
+    "bpe_vocab_size": 30000,
+    "bpe_model_path": "checkpoints/bpe_tokenizer.json",
+    "warmup_steps": 4000,
+    "clip_grad": 1.0,
+    "scheduler_patience": 5,
+    "scheduler_factor": 0.7,
+    "min_lr": 1e-06,
+    "save_dir": "checkpoints/transformer_bs_128",
+    "device": "cuda"
+  }
+}

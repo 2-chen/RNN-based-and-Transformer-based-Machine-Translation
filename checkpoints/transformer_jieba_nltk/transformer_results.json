@@ -1,0 +1,28 @@
+{
+  "best_valid_bleu": 30.130404892785695,
+  "test_bleu": 8.65593943882835,
+  "args": {
+    "config": "configs/transformer_config.yaml",
+    "train_file": "data/train_100k.jsonl",
+    "valid_file": "data/valid.jsonl",
+    "test_file": "data/test.jsonl",
+    "batch_size": 128,
+    "epochs": 1,
+    "lr": 0.0003,
+    "d_model": 1024,
+    "n_heads": 8,
+    "n_layers": 6,
+    "d_ff": 2048,
+    "pos_encoding": "absolute",
+    "norm_type": "layernorm",
+    "max_length": 50,
+    "min_freq": 2,
+    "warmup_steps": 4000,
+    "clip_grad": 1.0,
+    "scheduler_patience": 5,
+    "scheduler_factor": 0.7,
+    "min_lr": 1e-06,
+    "save_dir": "checkpoints",
+    "device": "cuda"
+  }
+}

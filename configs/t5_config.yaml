@@ -1,0 +1,31 @@
+# T5模型配置 - 针对2张H100优化
+
+# 数据路径
+train_file: data/train_100k.jsonl
+valid_file: data/valid.jsonl
+test_file: data/test.jsonl
+
+# 模型参数
+model_name: models
+
+# 训练参数 - 针对H100优化
+batch_size: 64  # 增大batch size以充分利用H100显存（单卡32，双卡64）
+gradient_accumulation_steps: 2  # 梯度累积，等效batch size = 64 * 2 = 128
+epochs: 10  # 至少训练10个epochs以获得更好性能
+lr: 5e-5  # 学习率（T5微调推荐：5e-5，更保守以避免NaN）
+warmup_steps: 500  # Warmup步数
+max_length: 128
+max_grad_norm: 1.0  # 梯度裁剪
+
+# 性能优化
+use_amp: false  # 暂时禁用混合精度训练，避免数值不稳定（T5对AMP较敏感）
+num_workers: 8  # DataLoader工作进程数
+pin_memory: true  # 固定内存，加速数据传输
+
+# 多GPU设置
+use_multi_gpu: true  # 使用多GPU训练
+
+# 其他
+save_dir: checkpoints
+device: cuda
+

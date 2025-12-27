@@ -1,0 +1,50 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+.venv
+
+# 模型检查点（如果太大可以不上传）
+checkpoints/*.pt
+checkpoints/*.pth
+checkpoints/*.ckpt
+# 但保留结果JSON文件
+!checkpoints/*.json
+
+# 预训练模型（通常太大，不上传）
+models/
+*.bin
+*.safetensors
+
+# 数据文件（如果太大，可以注释掉以包含数据）
+# data/*.jsonl
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# 系统文件
+.DS_Store
+Thumbs.db
+
+# 实验临时文件
+experiment_results/
+*.log
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+
+# 其他
+*.pdf
+!Midterm&Final\ project.pdf
+
+# 项目检查清单（可选）
+项目检查清单.md

@@ -1,0 +1,36 @@
+# RNN模型配置
+
+# 数据路径
+train_file: data/train_100k.jsonl
+valid_file: data/valid.jsonl
+test_file: data/test.jsonl
+
+# 训练参数
+batch_size: 64
+epochs: 200
+lr: 0.0005
+max_length: 50
+
+# 模型参数
+embed_dim: 256
+hidden_dim: 512
+num_layers: 2
+rnn_type: gru  # gru or lstm
+attention_type: dot  # dot, multiplicative, additive
+
+# 训练策略
+teacher_forcing: true
+free_running: false
+
+# 解码参数
+decode_method: greedy  # greedy or beam
+beam_size: 5
+
+# 分词参数
+min_freq: 2
+bpe_vocab_size: 30000
+bpe_model_path: checkpoints/bpe_tokenizer.json
+
+# 其他
+save_dir: checkpoints/rnn_hanlp_bpe
+device: cuda

@@ -1,0 +1,24 @@
+{
+  "best_valid_bleu": 23.924765018809246,
+  "test_bleu": 10.019454250070485,
+  "args": {
+    "config": "configs/t5_config.yaml",
+    "train_file": "data/train_100k.jsonl",
+    "valid_file": "data/valid.jsonl",
+    "test_file": "data/test.jsonl",
+    "model_name": "models",
+    "batch_size": 64,
+    "epochs": 10,
+    "lr": 5e-05,
+    "max_length": 128,
+    "save_dir": "checkpoints/t5_10epochs",
+    "device": "cuda",
+    "gradient_accumulation_steps": 2,
+    "warmup_steps": 500,
+    "max_grad_norm": 1.0,
+    "use_amp": false,
+    "num_workers": 8,
+    "pin_memory": true,
+    "use_multi_gpu": true
+  }
+}
