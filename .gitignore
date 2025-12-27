@@ -43,6 +43,7 @@ Thumbs.db
 # 实验临时文件
 experiment_results/
 *.log
+missfont.log
 
 # Jupyter Notebook
 .ipynb_checkpoints/
