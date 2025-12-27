@@ -40,29 +40,21 @@ python -c "import nltk; nltk.download('punkt_tab'); nltk.download('punkt')"
 
 注意：新版本的 NLTK 需要 `punkt_tab`，旧版本需要 `punkt`。代码会自动处理，但建议同时下载以确保兼容性。
 
-## 快速开始（Demo模型）
-
-**想要快速测试？** 使用Demo模型训练脚本，5-10分钟即可生成小模型（<100MB）：
+## 快速开始
 
 ```bash
-# 训练RNN Demo模型（约30-50MB，2个epoch）
-python train_demo.py --model_type rnn
+# 克隆仓库
+git clone https://github.com/2-chen/RNN-based-and-Transformer-based-Machine-Translation.git
 
-# 训练Transformer Demo模型（约50-80MB，2个epoch）
-python train_demo.py --model_type transformer
+# 进入项目目录
+cd RNN-based-and-Transformer-based-Machine-Translation
 
-# 训练所有Demo模型
-python train_demo.py --model_type all
+# 安装依赖
+pip install -r requirements.txt
 
-# 测试Demo模型
+# 一键测试推理（使用预训练的Demo模型）
 ./test_inference.sh
 ```
-
-**Demo模型特点**：
-- ✅ 快速训练（2个epoch，约5-10分钟）
-- ✅ 文件小（<100MB，可上传GitHub）
-- ✅ 适合测试和演示
-- ⚠️ 性能不如完整训练的模型
 
 ## 使用方法
 
@@ -76,21 +68,42 @@ python train_demo.py --model_type all
 - 词汇表构建
 - 词向量初始化（可选预训练词向量）
 
-### 2. 训练完整模型
+### 2. 训练模型
 
-#### 2.1 训练RNN模型
+#### 2.1 训练Demo模型（可选，用于快速测试）
+
+Demo模型已经包含在仓库中，可以直接使用。如果需要重新训练：
+
+```bash
+# 训练RNN Demo模型（约30-50MB，2个epoch，5-10分钟）
+python train_demo.py --model_type rnn
+
+# 训练Transformer Demo模型（约50-80MB，2个epoch，5-10分钟）
+python train_demo.py --model_type transformer
+
+# 训练所有Demo模型
+python train_demo.py --model_type all
+```
+
+**Demo模型特点**：
+- 快速训练（2个epoch，约5-10分钟）
+- 文件小（<100MB，已包含在仓库中）
+- 适合测试和演示
+- 性能不如完整训练的模型
+
+#### 2.2 训练完整RNN模型
 
 ```bash
 python src/train_rnn.py --config configs/rnn_config.yaml
 ```
 
-#### 2.2 训练Transformer模型
+#### 2.3 训练完整Transformer模型
 
 ```bash
 python src/train_transformer.py --config configs/transformer_config.yaml
 ```
 
-#### 2.3 微调T5模型
+#### 2.4 微调T5模型
 
 ```bash
 python src/train_t5.py --config configs/t5_config.yaml
@@ -101,7 +114,7 @@ python src/train_t5.py --config configs/t5_config.yaml
 #### 3.1 一键测试所有模型
 
 ```bash
-# 运行测试脚本（会自动测试所有可用的模型）
+# 运行测试脚本（会自动测试所有可用的Demo模型）
 ./test_inference.sh
 ```
 
