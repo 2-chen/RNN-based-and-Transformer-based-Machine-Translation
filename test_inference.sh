@@ -27,6 +27,7 @@ if check_model "rnn" "checkpoints/demo_rnn/rnn_best.pt"; then
         --checkpoint checkpoints/demo_rnn/rnn_best.pt \
         --input "但是即使是官方活动也带有政治色彩。" \
         --device cpu
+    # 注：此句子来自test.jsonl，在报告中标注为翻译效果好的简单句子
     echo ""
 else
     echo "   跳过（模型文件不存在）"
@@ -41,6 +42,7 @@ if check_model "transformer" "checkpoints/demo_transformer/transformer_best.pt";
         --checkpoint checkpoints/demo_transformer/transformer_best.pt \
         --input "但是即使是官方活动也带有政治色彩。" \
         --device cpu
+    # 注：此句子来自test.jsonl，在报告中标注为翻译效果好的简单句子
     echo ""
 else
     echo "   跳过（模型文件不存在）"

@@ -143,7 +143,7 @@ def main():
             print("  - RNN: checkpoints/demo_rnn/rnn_best.pt")
         if args.model_type in ['transformer', 'all']:
             print("  - Transformer: checkpoints/demo_transformer/transformer_best.pt")
-        print("\n可以使用以下命令测试推理：")
+        print("\n可以使用以下命令测试推理（使用test.jsonl中翻译效果好的句子）：")
         if args.model_type in ['rnn', 'all']:
             print("  python inference.py --model_type rnn --checkpoint checkpoints/demo_rnn/rnn_best.pt --input '但是即使是官方活动也带有政治色彩。'")
         if args.model_type in ['transformer', 'all']:
