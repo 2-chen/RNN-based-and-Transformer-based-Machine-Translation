@@ -1,6 +1,6 @@
 {
-  "best_valid_bleu": 16.692486522015724,
-  "test_bleu": 12.223075560872525,
+  "best_valid_bleu": 15.677171298104287,
+  "test_bleu": 19.87207215766376,
   "args": {
     "config": null,
     "train_file": "data/train_10k.jsonl",
@@ -9,9 +9,9 @@
     "batch_size": 32,
     "epochs": 10,
     "lr": 0.001,
-    "embed_dim": 128,
-    "hidden_dim": 256,
-    "num_layers": 1,
+    "embed_dim": 256,
+    "hidden_dim": 512,
+    "num_layers": 2,
     "rnn_type": "gru",
     "attention_type": "dot",
     "teacher_forcing": true,
