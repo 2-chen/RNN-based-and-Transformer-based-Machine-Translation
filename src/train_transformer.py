@@ -233,7 +233,7 @@ def evaluate(
             
             # 解码
             if decode_method == 'greedy':
-            sequences = greedy_decode(model, src, tgt_vocab, device=device)
+                sequences = greedy_decode(model, src, tgt_vocab, device=device)
             elif decode_method == 'beam':
                 sequences = beam_search_decode(model, src, tgt_vocab, beam_size, device=device)
             else:
