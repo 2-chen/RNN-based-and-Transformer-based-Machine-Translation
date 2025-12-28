@@ -22,7 +22,7 @@ def train_rnn_demo():
     print("\n配置说明：")
     print("  - 数据集: train_10k.jsonl (10,000条)")
     print("  - 模型参数: embed_dim=128, hidden_dim=256, num_layers=1")
-    print("  - 训练轮数: 2 epochs")
+    print("  - 训练轮数: 10 epochs")
     print("  - 预期模型大小: <50MB")
     print("\n开始训练...\n")
     
@@ -32,7 +32,7 @@ def train_rnn_demo():
         '--valid_file', 'data/valid.jsonl',
         '--test_file', 'data/test.jsonl',
         '--batch_size', '32',
-        '--epochs', '2',
+        '--epochs', '10',
         '--lr', '0.001',
         '--embed_dim', '128',      # 减小embedding维度
         '--hidden_dim', '256',     # 减小hidden维度
@@ -71,7 +71,7 @@ def train_transformer_demo():
     print("\n配置说明：")
     print("  - 数据集: train_10k.jsonl (10,000条)")
     print("  - 模型参数: d_model=256, n_layers=2, n_heads=4")
-    print("  - 训练轮数: 2 epochs")
+    print("  - 训练轮数: 10 epochs")
     print("  - 预期模型大小: <80MB")
     print("\n开始训练...\n")
     
@@ -81,7 +81,7 @@ def train_transformer_demo():
         '--valid_file', 'data/valid.jsonl',
         '--test_file', 'data/test.jsonl',
         '--batch_size', '32',
-        '--epochs', '2',
+        '--epochs', '10',
         '--lr', '0.0003',
         '--d_model', '256',        # 减小模型维度
         '--n_layers', '2',         # 减少层数
@@ -143,7 +143,7 @@ def main():
             print("  - RNN: checkpoints/demo_rnn/rnn_best.pt")
         if args.model_type in ['transformer', 'all']:
             print("  - Transformer: checkpoints/demo_transformer/transformer_best.pt")
-        print("\n可以使用以下命令测试推理（使用test.jsonl中翻译效果好的句子）：")
+        print("\n可以使用以下命令测试推理：")
         if args.model_type in ['rnn', 'all']:
             print("  python inference.py --model_type rnn --checkpoint checkpoints/demo_rnn/rnn_best.pt --input '但是即使是官方活动也带有政治色彩。'")
         if args.model_type in ['transformer', 'all']:
