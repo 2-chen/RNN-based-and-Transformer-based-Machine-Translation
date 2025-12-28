@@ -7,7 +7,7 @@
     "valid_file": "data/valid.jsonl",
     "test_file": "data/test.jsonl",
     "batch_size": 32,
-    "epochs": 2,
+    "epochs": 10,
     "lr": 0.001,
     "embed_dim": 128,
     "hidden_dim": 256,

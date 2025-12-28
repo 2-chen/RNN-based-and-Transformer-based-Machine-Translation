@@ -61,13 +61,13 @@ pip install -r requirements.txt
 使用 `inference.py` 可以直接翻译指定的中文文本：
 
 ```bash
-# 使用Demo RNN模型翻译（简单句子，翻译效果好）
+# 使用Demo RNN模型翻译
 python inference.py \
     --model_type rnn \
     --checkpoint checkpoints/demo_rnn/rnn_best.pt \
     --input "但是即使是官方活动也带有政治色彩。"
 
-# 使用Demo Transformer模型翻译（简单句子，翻译效果好）
+# 使用Demo Transformer模型翻译
 python inference.py \
     --model_type transformer \
     --checkpoint checkpoints/demo_transformer/transformer_best.pt \
@@ -139,43 +139,43 @@ python src/train_t5.py --config configs/t5_config.yaml
 #### 3.2 单独测试特定模型
 
 ```bash
-# RNN模型 (jieba+NLTK) - 简单句子，翻译效果好
+# RNN模型 (jieba+NLTK)
 python inference.py \
     --model_type rnn \
     --checkpoint checkpoints/rnn_jieba_nltk/rnn_best.pt \
     --input "记录指出 HMX-1 曾询问此次活动是否违反了该法案。"
 
-# RNN模型 (HanLP+BPE) - 简单句子，翻译效果好
+# RNN模型 (HanLP+BPE)
 python inference.py \
     --model_type rnn \
     --checkpoint checkpoints/rnn_hanlp_bpe/rnn_best.pt \
     --input "记录指出 HMX-1 曾询问此次活动是否违反了该法案。"
 
-# Transformer模型 (jieba+NLTK) - 长句子，翻译效果好
+# Transformer模型 (jieba+NLTK)
 python inference.py \
     --model_type transformer \
     --checkpoint checkpoints/transformer_jieba_nltk/transformer_best.pt \
     --input "白宫将此次"美国制造"活动定义为官方活动，因此不受《哈奇法案》管辖。"
 
-# Transformer模型 (HanLP+BPE) - 长句子，翻译效果好
+# Transformer模型 (HanLP+BPE)
 python inference.py \
     --model_type transformer \
     --checkpoint checkpoints/transformer_hanlp_bpe/transformer_best.pt \
     --input "白宫将此次"美国制造"活动定义为官方活动，因此不受《哈奇法案》管辖。"
 
-# T5模型 - 口语化表达，翻译效果好
+# T5模型
 python inference.py \
     --model_type t5 \
     --checkpoint checkpoints/t5_best \
     --input ""听起来你被锁住了啊，"副司令回复道。"
 
-# Demo RNN模型（快速测试，简单句子，翻译效果好）
+# Demo RNN模型（快速测试）
 python inference.py \
     --model_type rnn \
     --checkpoint checkpoints/demo_rnn/rnn_best.pt \
     --input "但是即使是官方活动也带有政治色彩。"
 
-# Demo Transformer模型（快速测试，简单句子，翻译效果好）
+# Demo Transformer模型（快速测试）
 python inference.py \
     --model_type transformer \
     --checkpoint checkpoints/demo_transformer/transformer_best.pt \
