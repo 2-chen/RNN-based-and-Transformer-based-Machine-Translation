@@ -17,11 +17,11 @@
 
 ```bash
 # RNN模型翻译
-python inference.py --model_type rnn --checkpoint checkpoints/rnn_best.pt --input "你好世界"
+python inference.py --model_type rnn --checkpoint checkpoints/rnn_best.pt --input "记录指出 HMX-1 曾询问此次活动是否违反了该法案。"
 
 # Transformer模型翻译
-python inference.py --model_type transformer --checkpoint checkpoints/transformer_best.pt --input "你好世界"
+python inference.py --model_type transformer --checkpoint checkpoints/transformer_best.pt --input "白宫将此次"美国制造"活动定义为官方活动，因此不受《哈奇法案》管辖。"
 
 # T5模型翻译
-python inference.py --model_type t5 --checkpoint checkpoints/t5_best --input "你好世界"
+python inference.py --model_type t5 --checkpoint checkpoints/t5_best --input "但是即使是官方活动也带有政治色彩。"
 ```

@@ -318,11 +318,11 @@ def generate_translation_examples():
     md_content += "可以使用以下命令生成翻译样例：\n\n"
     md_content += "```bash\n"
     md_content += "# RNN模型翻译\n"
-    md_content += "python inference.py --model_type rnn --checkpoint checkpoints/rnn_best.pt --input \"你好世界\"\n\n"
+    md_content += "python inference.py --model_type rnn --checkpoint checkpoints/rnn_best.pt --input \"记录指出 HMX-1 曾询问此次活动是否违反了该法案。\"\n\n"
     md_content += "# Transformer模型翻译\n"
-    md_content += "python inference.py --model_type transformer --checkpoint checkpoints/transformer_best.pt --input \"你好世界\"\n\n"
+    md_content += "python inference.py --model_type transformer --checkpoint checkpoints/transformer_best.pt --input \"白宫将此次"美国制造"活动定义为官方活动，因此不受《哈奇法案》管辖。\"\n\n"
     md_content += "# T5模型翻译\n"
-    md_content += "python inference.py --model_type t5 --checkpoint checkpoints/t5_best --input \"你好世界\"\n"
+    md_content += "python inference.py --model_type t5 --checkpoint checkpoints/t5_best --input \"但是即使是官方活动也带有政治色彩。\"\n"
     md_content += "```\n"
     
     with open('visualizations/translation_examples.md', 'w', encoding='utf-8') as f:

@@ -65,13 +65,13 @@ pip install -r requirements.txt
 python inference.py \
     --model_type rnn \
     --checkpoint checkpoints/demo_rnn/rnn_best.pt \
-    --input "你好世界"
+    --input "但是即使是官方活动也带有政治色彩。"
 
 # 使用Demo Transformer模型翻译
 python inference.py \
     --model_type transformer \
     --checkpoint checkpoints/demo_transformer/transformer_best.pt \
-    --input "你好世界"
+    --input "但是即使是官方活动也带有政治色彩。"
 ```
 
 ## 使用方法
@@ -143,43 +143,43 @@ python src/train_t5.py --config configs/t5_config.yaml
 python inference.py \
     --model_type rnn \
     --checkpoint checkpoints/rnn_jieba_nltk/rnn_best.pt \
-    --input "自然语言处理是人工智能的重要分支"
+    --input "记录指出 HMX-1 曾询问此次活动是否违反了该法案。"
 
 # RNN模型 (HanLP+BPE)
 python inference.py \
     --model_type rnn \
     --checkpoint checkpoints/rnn_hanlp_bpe/rnn_best.pt \
-    --input "自然语言处理是人工智能的重要分支"
+    --input "记录指出 HMX-1 曾询问此次活动是否违反了该法案。"
 
 # Transformer模型 (jieba+NLTK)
 python inference.py \
     --model_type transformer \
     --checkpoint checkpoints/transformer_jieba_nltk/transformer_best.pt \
-    --input "机器翻译可以帮助人们理解不同语言的内容"
+    --input "白宫将此次"美国制造"活动定义为官方活动，因此不受《哈奇法案》管辖。"
 
 # Transformer模型 (HanLP+BPE)
 python inference.py \
     --model_type transformer \
     --checkpoint checkpoints/transformer_hanlp_bpe/transformer_best.pt \
-    --input "机器翻译可以帮助人们理解不同语言的内容"
+    --input "白宫将此次"美国制造"活动定义为官方活动，因此不受《哈奇法案》管辖。"
 
 # T5模型
 python inference.py \
     --model_type t5 \
     --checkpoint checkpoints/t5_best \
-    --input "深度学习在自然语言处理领域取得了重大突破"
+    --input ""听起来你被锁住了啊，"副司令回复道。"
 
 # Demo RNN模型（快速测试）
 python inference.py \
     --model_type rnn \
     --checkpoint checkpoints/demo_rnn/rnn_best.pt \
-    --input "你好世界"
+    --input "但是即使是官方活动也带有政治色彩。"
 
 # Demo Transformer模型（快速测试）
 python inference.py \
     --model_type transformer \
     --checkpoint checkpoints/demo_transformer/transformer_best.pt \
-    --input "你好世界"
+    --input "但是即使是官方活动也带有政治色彩。"
 ```
 
 ## 模型特性
