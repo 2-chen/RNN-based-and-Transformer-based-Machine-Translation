@@ -56,6 +56,24 @@ pip install -r requirements.txt
 ./test_inference.sh
 ```
 
+### 交互式翻译（自由输入）
+
+使用交互式脚本可以持续输入中文文本进行翻译：
+
+```bash
+# 使用Demo RNN模型进行交互式翻译
+python interactive_translate.py \
+    --model_type rnn \
+    --checkpoint checkpoints/demo_rnn/rnn_best.pt
+
+# 使用Demo Transformer模型
+python interactive_translate.py \
+    --model_type transformer \
+    --checkpoint checkpoints/demo_transformer/transformer_best.pt
+```
+
+运行后会进入交互模式，输入中文文本即可获得翻译结果，输入 `quit` 或 `exit` 退出。
+
 ## 使用方法
 
 ### 1. 数据预处理
