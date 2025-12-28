@@ -65,13 +65,13 @@ pip install -r requirements.txt
 python inference.py \
     --model_type rnn \
     --checkpoint checkpoints/demo_rnn/rnn_best.pt \
-    --input "但是即使是官方活动也带有政治色彩。"
+    --input "问题在于为什么"
 
 # 使用Demo Transformer模型翻译
 python inference.py \
     --model_type transformer \
     --checkpoint checkpoints/demo_transformer/transformer_best.pt \
-    --input "但是即使是官方活动也带有政治色彩。"
+    --input "问题在于为什么"
 ```
 
 ## 使用方法
@@ -173,13 +173,13 @@ python inference.py \
 python inference.py \
     --model_type rnn \
     --checkpoint checkpoints/demo_rnn/rnn_best.pt \
-    --input "但是即使是官方活动也带有政治色彩。"
+    --input "问题在于为什么"
 
 # Demo Transformer模型（快速测试）
 python inference.py \
     --model_type transformer \
     --checkpoint checkpoints/demo_transformer/transformer_best.pt \
-    --input "但是即使是官方活动也带有政治色彩。"
+    --input "问题在于为什么"
 ```
 
 ## 模型特性
