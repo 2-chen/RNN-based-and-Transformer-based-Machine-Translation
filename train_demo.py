@@ -21,9 +21,9 @@ def train_rnn_demo():
     print("="*60)
     print("\n配置说明：")
     print("  - 数据集: train_10k.jsonl (10,000条)")
-    print("  - 模型参数: embed_dim=128, hidden_dim=256, num_layers=1")
+    print("  - 模型参数: embed_dim=256, hidden_dim=512, num_layers=2")
     print("  - 训练轮数: 10 epochs")
-    print("  - 预期模型大小: <50MB")
+    print("  - 预期模型大小: <100MB")
     print("\n开始训练...\n")
     
     cmd = [
@@ -34,9 +34,9 @@ def train_rnn_demo():
         '--batch_size', '32',
         '--epochs', '10',
         '--lr', '0.001',
-        '--embed_dim', '128',      # 减小embedding维度
-        '--hidden_dim', '256',     # 减小hidden维度
-        '--num_layers', '1',       # 减少层数
+        '--embed_dim', '256',      # 增加embedding维度以提升性能
+        '--hidden_dim', '512',     # 增加hidden维度以提升性能
+        '--num_layers', '2',       # 增加层数以提升性能
         '--rnn_type', 'gru',
         '--attention_type', 'dot',
         '--teacher_forcing',
