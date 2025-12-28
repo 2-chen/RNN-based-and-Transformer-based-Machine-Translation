@@ -145,9 +145,9 @@ def main():
             print("  - Transformer: checkpoints/demo_transformer/transformer_best.pt")
         print("\n可以使用以下命令测试推理：")
         if args.model_type in ['rnn', 'all']:
-            print("  python inference.py --model_type rnn --checkpoint checkpoints/demo_rnn/rnn_best.pt --input '问题在于为什么'")
+            print("  python inference.py --model_type rnn --checkpoint checkpoints/demo_rnn/rnn_best.pt --input '全球经济缓慢增长又一年'")
         if args.model_type in ['transformer', 'all']:
-            print("  python inference.py --model_type transformer --checkpoint checkpoints/demo_transformer/transformer_best.pt --input '问题在于为什么'")
+            print("  python inference.py --model_type transformer --checkpoint checkpoints/demo_transformer/transformer_best.pt --input '全球经济缓慢增长又一年'")
         print("\n注意：Demo模型仅用于测试，性能不如完整训练的模型。")
     else:
         print("\n训练过程中出现错误，请检查日志。")

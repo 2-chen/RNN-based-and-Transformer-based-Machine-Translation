@@ -233,7 +233,7 @@ def evaluate(
             
             # 解码
             if decode_method == 'greedy':
-                    sequences = greedy_decode(model, src, tgt_vocab, device=device)
+                sequences = greedy_decode(model, src, tgt_vocab, device=device)
             elif decode_method == 'beam':
                 sequences = beam_search_decode(model, src, tgt_vocab, beam_size, device=device)
             else:
@@ -323,7 +323,7 @@ def main():
             for k, v in config.items():
                 # 如果命令行中没有提供该参数，才使用配置文件的值
                 if not is_arg_provided(k):
-                    setattr(args, k, v)
+                setattr(args, k, v)
     
     device = torch.device(args.device)
     

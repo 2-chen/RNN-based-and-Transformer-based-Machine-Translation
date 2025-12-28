@@ -25,7 +25,7 @@ if check_model "rnn" "checkpoints/demo_rnn/rnn_best.pt"; then
     python inference.py \
         --model_type rnn \
         --checkpoint checkpoints/demo_rnn/rnn_best.pt \
-        --input "问题在于为什么" \
+        --input "全球经济缓慢增长又一年" \
         --device cpu
     echo ""
 else
@@ -39,7 +39,7 @@ if check_model "transformer" "checkpoints/demo_transformer/transformer_best.pt";
     python inference.py \
         --model_type transformer \
         --checkpoint checkpoints/demo_transformer/transformer_best.pt \
-        --input "问题在于为什么" \
+        --input "全球经济缓慢增长又一年" \
         --device cpu
     echo ""
 else
